@@ -1,3 +1,4 @@
+// Tính Ước chung lớn nhất (UCLN)
 function gcd(a, b) {
     while (b !== 0) {
         const temp = b;
@@ -7,16 +8,18 @@ function gcd(a, b) {
     return a;
 }
 
+// Tính Bội chung nhỏ nhất (BCNN)
 function lcm(a, b) {
     return Math.abs(a * b) / gcd(a, b);
 }
 
+// Tính toán và cập nhật kết quả
 function calculate() {
     const num1 = parseInt(document.getElementById('number1').value);
     const num2 = parseInt(document.getElementById('number2').value);
     
-    if (isNaN(num1) || isNaN(num2)) {
-        alert('Vui lòng nhập số hợp lệ.');
+    if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+        alert('Vui lòng nhập các số nguyên dương hợp lệ.');
         return;
     }
     
