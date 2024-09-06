@@ -1,31 +1,28 @@
-// Tính Ước chung lớn nhất (UCLN)
+document.getElementById('calculateButton').addEventListener('click', function() {
+    const num1 = parseInt(document.getElementById('num1').value);
+    const num2 = parseInt(document.getElementById('num2').value);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        alert("Vui lòng nhập số hợp lệ.");
+        return;
+    }
+
+    const ucln = gcd(num1, num2);
+    const bcnn = lcm(num1, num2);
+
+    document.getElementById('uclnResult').textContent = `UCLN: ${ucln}`;
+    document.getElementById('bcnnResult').textContent = `BCNN: ${bcnn}`;
+});
+
 function gcd(a, b) {
     while (b !== 0) {
-        const temp = b;
+        let temp = b;
         b = a % b;
         a = temp;
     }
     return a;
 }
 
-// Tính Bội chung nhỏ nhất (BCNN)
 function lcm(a, b) {
-    return Math.abs(a * b) / gcd(a, b);
-}
-
-// Tính toán và cập nhật kết quả
-function calculate() {
-    const num1 = parseInt(document.getElementById('number1').value);
-    const num2 = parseInt(document.getElementById('number2').value);
-    
-    if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
-        alert('Vui lòng nhập các số nguyên dương hợp lệ.');
-        return;
-    }
-    
-    const resultGCD = gcd(num1, num2);
-    const resultLCM = lcm(num1, num2);
-    
-    document.getElementById('gcdResult').innerText = `UCLN: ${resultGCD}`;
-    document.getElementById('lcmResult').innerText = `BCNN: ${resultLCM}`;
+    return (a * b) / gcd(a, b);
 }
