@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ƯCLN và BCNN</title>
+    <title>Tính ƯCLN và BCNN</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Tính ƯCLN và BCNN</h1>
-        
-        <!-- Phần ƯCLN -->
-        <section id="gcd-section">
-            <h2>Tính ƯCLN</h2>
-            <form id="gcdForm">
-                <div class="input-group">
-                    <label for="gcd-num1">Số thứ nhất:</label>
-                    <input type="number" id="gcd-num1" required>
+        <header>
+            <h1>Tính ƯCLN và BCNN</h1>
+        </header>
+        <main>
+            <!-- Phần ƯCLN -->
+            <section class="card" id="gcd-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-greater-than-equal"></i> ƯCLN</h2>
                 </div>
-                <div class="input-group">
-                    <label for="gcd-num2">Số thứ hai:</label>
-                    <input type="number" id="gcd-num2" required>
+                <form id="gcdForm" class="card-content">
+                    <div class="input-group">
+                        <label for="gcd-num1">Số thứ nhất:</label>
+                        <input type="number" id="gcd-num1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="gcd-num2">Số thứ hai:</label>
+                        <input type="number" id="gcd-num2" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Tính ƯCLN</button>
+                </form>
+                <div id="gcd-result" class="result">ƯCLN: </div>
+            </section>
+            
+            <!-- Phần BCNN -->
+            <section class="card" id="lcm-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-plus"></i> BCNN</h2>
                 </div>
-                <button type="submit">Tính ƯCLN</button>
-            </form>
-            <p id="gcd-result">ƯCLN: </p>
-        </section>
-        
-        <!-- Phần BCNN -->
-        <section id="lcm-section">
-            <h2>Tính BCNN</h2>
-            <form id="lcmForm">
-                <div class="input-group">
-                    <label for="lcm-num1">Số thứ nhất:</label>
-                    <input type="number" id="lcm-num1" required>
-                </div>
-                <div class="input-group">
-                    <label for="lcm-num2">Số thứ hai:</label>
-                    <input type="number" id="lcm-num2" required>
-                </div>
-                <button type="submit">Tính BCNN</button>
-            </form>
-            <p id="lcm-result">BCNN: </p>
-        </section>
+                <form id="lcmForm" class="card-content">
+                    <div class="input-group">
+                        <label for="lcm-num1">Số thứ nhất:</label>
+                        <input type="number" id="lcm-num1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lcm-num2">Số thứ hai:</label>
+                        <input type="number" id="lcm-num2" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Tính BCNN</button>
+                </form>
+                <div id="lcm-result" class="result">BCNN: </div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2024 Bản quyền thuộc về bạn. <a href="#">Liên hệ</a></p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
