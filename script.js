@@ -1,28 +1,43 @@
-document.getElementById('calculateButton').addEventListener('click', function() {
-    const num1 = parseInt(document.getElementById('num1').value);
-    const num2 = parseInt(document.getElementById('num2').value);
-
-    if (isNaN(num1) || isNaN(num2)) {
-        alert("Vui lòng nhập số hợp lệ.");
-        return;
+document.getElementById('gcdForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const num1 = parseInt(document.getElementById('gcd-num1').value);
+    const num2 = parseInt(document.getElementById('gcd-num2').value);
+    
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 
-    const ucln = gcd(num1, num2);
-    const bcnn = lcm(num1, num2);
-
-    document.getElementById('uclnResult').textContent = `UCLN: ${ucln}`;
-    document.getElementById('bcnnResult').textContent = `BCNN: ${bcnn}`;
+    const gcdResult = gcd(num1, num2);
+    
+    document.getElementById('gcd-result').textContent = `ƯCLN: ${gcdResult}`;
 });
 
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
+document.getElementById('lcmForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const num1 = parseInt(document.getElementById('lcm-num1').value);
+    const num2 = parseInt(document.getElementById('lcm-num2').value);
+    
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
-    return a;
-}
 
-function lcm(a, b) {
-    return (a * b) / gcd(a, b);
-}
+    function lcm(a, b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    const lcmResult = lcm(num1, num2);
+    
+    document.getElementById('lcm-result').textContent = `BCNN: ${lcmResult}`;
+});
