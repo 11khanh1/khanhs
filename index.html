@@ -7,23 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Tính UCLN và BCNN</h1>
-        <form id="calcForm">
-            <label for="number1">Số thứ nhất:</label>
-            <input type="number" id="number1" required>
-            <br>
-            <label for="number2">Số thứ hai:</label>
-            <input type="number" id="number2" required>
-            <br>
-            <button type="button" onclick="calculate()">Tính</button>
-        </form>
-        <div id="results">
-            <p id="gcdResult">UCLN: </p>
-            <p id="lcmResult">BCNN: </p>
-        </div>
-    </div>
+    <header>
+        <h1>Tính Ước Chung Lớn Nhất (UCLN) và Bội Chung Nhỏ Nhất (BCNN)</h1>
+    </header>
+    <main>
+        <section class="calculator">
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="number1">Số thứ nhất:</label>
+                    <input type="number" id="number1" required>
+                </div>
+                <div class="form-group">
+                    <label for="number2">Số thứ hai:</label>
+                    <input type="number" id="number2" required>
+                </div>
+                <button type="button" onclick="calculate()">Tính</button>
+            </form>
+            <div id="results">
+                <div class="result-item" id="gcdResult">UCLN: </div>
+                <div class="result-item" id="lcmResult">BCNN: </div>
+            </div>
+        </section>
+        <section class="info">
+            <h2>Giải thích:</h2>
+            <p><strong>UCLN (Ước chung lớn nhất):</strong> Là số lớn nhất mà cả hai số đều chia hết cho nó.</p>
+            <p><strong>BCNN (Bội chung nhỏ nhất):</strong> Là số nhỏ nhất mà cả hai số đều là ước của nó.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Thuật toán toán học. Thiết kế bởi ChatGPT.</p>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
-
