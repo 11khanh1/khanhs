@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tính Ước Số Chung Lớn Nhất (UCLN) và Bội Số Chung Nhỏ Nhất (BCNN)</h1>
-
-        <!-- Phép Tính UCLN -->
-        <div class="calculator">
-            <h2>Ước Số Chung Lớn Nhất (UCLN)</h2>
-            <div class="input-group">
-                <input type="number" id="num1-ucln" placeholder="Số thứ nhất">
-                <input type="number" id="num2-ucln" placeholder="Số thứ hai">
-            </div>
-            <button onclick="calculateUCLN()">Tính UCLN</button>
-            <div id="result-ucln" class="result"></div>
-        </div>
-
-        <!-- Phép Tính BCNN -->
-        <div class="calculator">
-            <h2>Bội Số Chung Nhỏ Nhất (BCNN)</h2>
-            <div class="input-group">
-                <input type="number" id="num1-bcnn" placeholder="Số thứ nhất">
-                <input type="number" id="num2-bcnn" placeholder="Số thứ hai">
-            </div>
-            <button onclick="calculateBCNN()">Tính BCNN</button>
-            <div id="result-bcnn" class="result"></div>
+        <h1>Tính UCLN và BCNN</h1>
+        <form id="calcForm">
+            <label for="number1">Số thứ nhất:</label>
+            <input type="number" id="number1" required>
+            <br>
+            <label for="number2">Số thứ hai:</label>
+            <input type="number" id="number2" required>
+            <br>
+            <button type="button" onclick="calculate()">Tính</button>
+        </form>
+        <div id="results">
+            <p id="gcdResult">UCLN: </p>
+            <p id="lcmResult">BCNN: </p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
