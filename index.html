@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính UCLN</title>
+    <title>Tính UCLN và BCNN</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Tính UCLN và BCNN</h1>
+    <div class="container">
+        <h1>Tính Ước Số Chung Lớn Nhất (UCLN) và Bội Số Chung Nhỏ Nhất (BCNN)</h1>
 
-    <!-- Phép Tính UCLN -->
-    <div class="calculator">
-        <h2>Ước Số Chung Lớn Nhất (UCLN)</h2>
-        <input type="number" id="num1-ucln" placeholder="Số thứ nhất">
-        <input type="number" id="num2-ucln" placeholder="Số thứ hai">
-        <button onclick="calculateUCLN()">Tính UCLN</button>
-        <div id="result-ucln"></div>
-    </div>
+        <!-- Phép Tính UCLN -->
+        <div class="calculator">
+            <h2>Ước Số Chung Lớn Nhất (UCLN)</h2>
+            <div class="input-group">
+                <input type="number" id="num1-ucln" placeholder="Số thứ nhất">
+                <input type="number" id="num2-ucln" placeholder="Số thứ hai">
+            </div>
+            <button onclick="calculateUCLN()">Tính UCLN</button>
+            <div id="result-ucln" class="result"></div>
+        </div>
 
-    <!-- Phép Tính BCNN -->
-    <div class="calculator">
-        <h2>Bội Số Chung Nhỏ Nhất (BCNN)</h2>
-        <input type="number" id="num1-bcnn" placeholder="Số thứ nhất">
-        <input type="number" id="num2-bcnn" placeholder="Số thứ hai">
-        <button onclick="calculateBCNN()">Tính BCNN</button>
-        <div id="result-bcnn"></div>
+        <!-- Phép Tính BCNN -->
+        <div class="calculator">
+            <h2>Bội Số Chung Nhỏ Nhất (BCNN)</h2>
+            <div class="input-group">
+                <input type="number" id="num1-bcnn" placeholder="Số thứ nhất">
+                <input type="number" id="num2-bcnn" placeholder="Số thứ hai">
+            </div>
+            <button onclick="calculateBCNN()">Tính BCNN</button>
+            <div id="result-bcnn" class="result"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
