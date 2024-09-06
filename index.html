@@ -1,42 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính UCLN và BCNN</title>
     <link rel="stylesheet" href="styles.css">
+    <title>UCLN và BCNN</title>
 </head>
 <body>
-    <header>
-        <h1>Tính Ước Chung Lớn Nhất (UCLN) và Bội Chung Nhỏ Nhất (BCNN)</h1>
-    </header>
-    <main>
-        <section class="calculator">
-            <form id="calcForm">
-                <div class="form-group">
-                    <label for="number1">Số thứ nhất:</label>
-                    <input type="number" id="number1" required>
-                </div>
-                <div class="form-group">
-                    <label for="number2">Số thứ hai:</label>
-                    <input type="number" id="number2" required>
-                </div>
-                <button type="button" onclick="calculate()">Tính</button>
-            </form>
-            <div id="results">
-                <div class="result-item" id="gcdResult">UCLN: </div>
-                <div class="result-item" id="lcmResult">BCNN: </div>
-            </div>
-        </section>
-        <section class="info">
-            <h2>Giải thích:</h2>
-            <p><strong>UCLN (Ước chung lớn nhất):</strong> Là số lớn nhất mà cả hai số đều chia hết cho nó.</p>
-            <p><strong>BCNN (Bội chung nhỏ nhất):</strong> Là số nhỏ nhất mà cả hai số đều là ước của nó.</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Thuật toán toán học. Thiết kế bởi ChatGPT.</p>
-    </footer>
-    <script src="scripts.js"></script>
+    <div class="container">
+        <h1>Tính UCLN và BCNN</h1>
+        <div class="input-container">
+            <input type="number" id="num1" placeholder="Nhập số thứ nhất" required>
+            <input type="number" id="num2" placeholder="Nhập số thứ hai" required>
+            <button id="calculateButton">Tính</button>
+        </div>
+        <div class="result">
+            <p id="uclnResult">UCLN: </p>
+            <p id="bcnnResult">BCNN: </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
