@@ -1,29 +1,22 @@
- function calculateUCLN() {
-            const num1 = parseInt(document.getElementById('num1-ucln').value);
-            const num2 = parseInt(document.getElementById('num2-ucln').value);
-
-            function gcd(a, b) {
-                if (b === 0) return a;
-                return gcd(b, a % b);
-            }
-
-            const result = gcd(num1, num2);
-            document.getElementById('result-ucln').textContent = `UCLN: ${result}`;
+function calculateUCLN() {
+    const num1 = parseInt(document.getElementById('num1-ucln').value);
+    const num2 = parseInt(document.getElementById('num2-ucln').value);
+    let ucln = 1;
+    for (let i = 1; i <= Math.min(num1, num2); i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            ucln = i;
         }
+    }
+    document.getElementById('result-ucln').innerText = `UCLN: ${ucln}`;
+}
 
-        function calculateBCNN() {
-            const num1 = parseInt(document.getElementById('num1-bcnn').value);
-            const num2 = parseInt(document.getElementById('num2-bcnn').value);
+function calculateBCNN() {
+    const num1 = parseInt(document.getElementById('num1-bcnn').value);
+    const num2 = parseInt(document.getElementById('num2-bcnn').value);
+    const bcnn = (num1 * num2) / gcd(num1, num2);
+    document.getElementById('result-bcnn').innerText = `BCNN: ${bcnn}`;
+}
 
-            function gcd(a, b) {
-                if (b === 0) return a;
-                return gcd(b, a % b);
-            }
-
-            function lcm(a, b) {
-                return (a * b) / gcd(a, b);
-            }
-
-            const result = lcm(num1, num2);
-            document.getElementById('result-bcnn').textContent = `BCNN: ${result}`;
-        }
+function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+}
