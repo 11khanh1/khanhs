@@ -1,39 +1,29 @@
-function bubbleSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+ function calculateUCLN() {
+            const num1 = parseInt(document.getElementById('num1-ucln').value);
+            const num2 = parseInt(document.getElementById('num2-ucln').value);
+
+            function gcd(a, b) {
+                if (b === 0) return a;
+                return gcd(b, a % b);
             }
+
+            const result = gcd(num1, num2);
+            document.getElementById('result-ucln').textContent = `UCLN: ${result}`;
         }
-    }
-    return arr;
-}
 
-function insertionSort(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        let key = arr[i];
-        let j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
+        function calculateBCNN() {
+            const num1 = parseInt(document.getElementById('num1-bcnn').value);
+            const num2 = parseInt(document.getElementById('num2-bcnn').value);
+
+            function gcd(a, b) {
+                if (b === 0) return a;
+                return gcd(b, a % b);
+            }
+
+            function lcm(a, b) {
+                return (a * b) / gcd(a, b);
+            }
+
+            const result = lcm(num1, num2);
+            document.getElementById('result-bcnn').textContent = `BCNN: ${result}`;
         }
-        arr[j + 1] = key;
-    }
-    return arr;
-}
-
-function sortArray() {
-    let algorithm = document.getElementById("algorithm").value;
-    let inputArray = document.getElementById("array-input").value.split(',').map(Number); // Get and convert the input
-
-    let sortedArray;
-    if (algorithm === "bubble") {
-        sortedArray = bubbleSort([...inputArray]);
-    } else if (algorithm === "insertion") {
-        sortedArray = insertionSort([...inputArray]);
-    }
-
-    document.getElementById("sorted-array").textContent = sortedArray.join(", ");
-}
